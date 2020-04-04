@@ -1,0 +1,28 @@
+input RecipeInput {
+    title: String!
+    description: String!
+    ingredients: [IngredientInput!]
+}
+input IngredientInput {
+     name: String!
+     quantity: String!
+}
+
+type Recipe {
+    title: String!
+    description: String!
+    ingredients: [Ingredient!]
+}
+
+type Ingredient {
+     name: String!
+     quantity: String!
+}
+
+type Query {
+        recipe(title:String) : Recipe
+}
+
+type Mutation {
+        createRecipe(input: RecipeInput) : Recipe
+}
